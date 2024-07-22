@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туристическое агенство Континент</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="brand">Континент</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="index.html">Главная</a>
+          
+          <a href="choose.html">Выбрать тур</a>
+          <a href="blog.html">Блог</a>
+          <a href="contact.html">Контакты</a>
+        </div>
+      </div>
+    </header>
+    <section class="home">
+      <video class="video-slide active" src="stambul1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="stambul2.mp4"  muted  loop></video>
+      <video class="video-slide" src="stambul3.mp4"    muted loop></video>
+      <video class="video-slide" src="turkey3.mp4" muted loop></video>
+      
+      <div class="content active">
+   
+  
+      
+     <h1>Путешествуй <br>c нами</h1>
+        <p>Туристическое агентство "Континент" оказывает <br>
+           полный спектор туристических услуг для <br>
+           индивидуальных и корпоративных клиентов. <br></p>
+      </div>
+      <div class="content">
+        <h1>Открой для себя<br>Стамбул</h1>
+        <p>Lorem ipsum dolor sit amet, tempo  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt.</p>
+        <a href="choose.html"> Выбрать тур</a>
+      </div>
+      <div class="content">
+        <h1>Посети <br>прекрасные места</h1>
+        <p>t dolore magna aliqua. quis nostrud exercitatnisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a href="choose.html">Выбрать тур</a>
+      </div>
+      <div class="content">
+        <h1>Твое незабываемое<br>путешествие</h1>
+        <p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a href="choose.html">Выбрать тур</a>
+      </div>
+     
+      </div>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        
+      </div>
+    </section>
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    
+
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+        slide.setAttribute('muted', true);
+        slide.muted = true;
+        slide.pause();
+
+
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+      slides[manual].removeAttribute('muted');
+      slides[manual].muted = false;
+      slides[manual].play();
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+</html>
+      
